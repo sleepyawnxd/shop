@@ -50,7 +50,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin','prefix' =>'admin'],fu
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 
 
