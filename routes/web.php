@@ -36,8 +36,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin','prefix' =>'admin'],fu
         route::get('/','IndexController')->name('partner.index');
 
         route::group(['namespace' => 'Products', 'prefix' => 'product'],function (){
-            route::get('/create','CreateController')->name('create.product');
-            route::post('/','StoreController')->name('store.product');
+            Route::get('/','IndexController')->name('partner.product.index');
+            Route::get('/create','CreateController')->name('partner.product.create');
+            Route::post('/','StoreController')->name('partner.product.store');
+            Route::get('/{product}','ShowController')->name('partner.product.show');
+            Route::get('/{product}/edit','EditController')->name('partner.product.edit');
+            Route::patch('/{product}','UpdateController')->name('partner.product.update');
+            Route::delete('/{product}','DeleteController')->name('partner.product.delete');
 
         });
     });

@@ -92,7 +92,7 @@
                                 </a>
                                 <ul class="nav nav-treeview" style="display: block;">
                                     <li class="nav-item">
-                                        <a href="{{route('create.product')}}" class="nav-link">
+                                        <a href="{{route('partner.product.create')}}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p><ya-tr-span data-index="24-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Dashboard v1" data-translation="Товары на сайте" data-type="trSpan">Cоздание товаров</ya-tr-span></p>
                                         </a>

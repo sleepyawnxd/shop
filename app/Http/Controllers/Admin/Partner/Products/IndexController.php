@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Product;
+namespace App\Http\Controllers\Admin\Partner\Products;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -13,6 +13,6 @@ class IndexController extends Controller
     {
 
         $products = Product::all();
-        return view('Network_shop/admin/product/index',compact('products'));
+        return view('admin.partner.products.index',compact('products'));
     }
 }

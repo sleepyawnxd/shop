@@ -11,6 +11,10 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
+
+
+
+
         $categories = Subcategory::all();
 
         return view('admin.partner.products.create',compact('categories'));

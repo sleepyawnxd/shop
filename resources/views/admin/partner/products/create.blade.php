@@ -37,7 +37,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
 
-                    <form action="{{route('store.product')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('partner.product.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                                 <div class="row" >

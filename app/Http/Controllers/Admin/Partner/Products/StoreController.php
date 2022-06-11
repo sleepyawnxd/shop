@@ -34,6 +34,7 @@ class StoreController extends Controller
 
 
         Product::firstOrCreate($data);
+        dd('Товар добавлен');
         return redirect()->route('create.product');
 
     }
