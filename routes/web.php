@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// xyz
 
 Route::group(['namespace' => 'App\Http\Controllers\Main','prefix' =>'shop'],function (){
     route::get('/','IndexController')->name('shop.index');
