@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Partner\Products;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Product\UpdateRequest;
+
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ class DeleteController extends Controller
 {
     public function __invoke(Product $product)
     {
-        dd('delete product');
+
 
         Storage::disk('public')->delete($product->preview_image);
         Storage::disk('public')->delete($product->second_image);
@@ -23,6 +23,8 @@ class DeleteController extends Controller
 
         Storage::delete($product->third_image);
         $product->delete();
-        return redirect()->route('admin.product.index');
+
+        dd('Товар удален');
+//        return redirect()->route('admin.product.index');
     }
 }
