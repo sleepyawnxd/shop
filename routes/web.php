@@ -24,8 +24,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Main','prefix' =>'shop'],func
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Catalog','prefix' =>'catalog'],function (){
-    route::get('/','IndexController')->name('catalog.index');
-    route::get('/{product}','ViewController')->name('product.view');
+    route::get('/{category}','IndexController')->name('catalog.index');
+    route::get('/view/{product}','ViewController')->name('product.view');
 });
 
 

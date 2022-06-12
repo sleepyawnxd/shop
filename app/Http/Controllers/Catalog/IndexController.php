@@ -9,12 +9,11 @@ use App\Models\Product;
 class IndexController extends Controller
 {
 
-
     //Тут передача id
-    public function __invoke()
+    public function __invoke($id)
     {
-        $id = 1;
+
         $products = Product::where('subcategory_id', '=',$id)->get();
-        dd($products);
+        return view('index.shop',compact('products'));
     }
 }
