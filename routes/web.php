@@ -31,11 +31,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Catalog','prefix' =>'catalog'
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin','prefix' =>'admin'],function (){
-    route::get('/','IndexController')->name('admin.index');
+//    route::get('/','IndexController')->name('admin.index');
 
     route::group(['namespace' => 'Partner', 'prefix' => 'partner'],function (){
-        route::get('/','IndexController')->name('partner.index');
-
+//        route::get('/','IndexController')->name('partner.index');
         route::group(['namespace' => 'Products', 'prefix' => 'product'],function (){
             Route::get('/','IndexController')->name('partner.product.index');
             Route::get('/create','CreateController')->name('partner.product.create');
@@ -44,7 +43,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin','prefix' =>'admin'],fu
             Route::get('/{product}/edit','EditController')->name('partner.product.edit');
             Route::patch('/{product}','UpdateController')->name('partner.product.update');
             Route::delete('/{product}','DeleteController')->name('partner.product.delete');
-
         });
     });
 

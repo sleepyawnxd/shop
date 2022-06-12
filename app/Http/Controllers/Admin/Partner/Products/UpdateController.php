@@ -15,7 +15,7 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request, Product $product)
     {
 
-        dd('update');
+
 
         $data = $request->validated();
 
@@ -38,6 +38,8 @@ class UpdateController extends Controller
         $product->update($data);
 
         $category = Category::where('id','=',$product->category_id)->first();
-        return view('Network_shop/admin/product/show', compact('product', 'category'));
+
+        dd('Запись обналвена');
+//        return view('Network_shop/admin/product/show', compact('product', 'category'));
     }
 }

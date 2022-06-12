@@ -1,4 +1,4 @@
-@extends('layouts.adminpartner')
+@extends('admin.index')
 
 @section('content')
 
@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Редактирование карточки товара {{$products->id}}</h1>
+                        <h1 class="m-0">Редактирование карточки товара {{$product->id}}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -36,89 +36,73 @@
                      -->
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{route('admin.partner.products.update',$products)}}" method="post" enctype="multipart/form-data">
-
+                    <form action="{{route('partner.product.update',$product->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('PATCH')
                         <div class="card-body">
-                                <div class="row" >
-                                        <div class="form-group col-sm-6">
-                                            <label for="exampleInputEmail1"><ya-tr-span data-index="106-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Email address" data-translation="Эл. адрес" data-type="trSpan">Введите артикул товара</ya-tr-span></label>
-                                            <input type="input-group-text" class="form-control"  placeholder="Введите артикул товара" name="article" value="{{$products->article}}">
-                                        </div>
-                                    <div class="col-sm-2">
-                                        <!-- select -->
-                                        <div class="form-group col-sm">
-                                            <label><ya-tr-span data-index="276-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Select" data-translation="Выберите" data-type="trSpan">Выберите пол:</ya-tr-span></label>
-                                            <select class="form-control" id="gender" name="gender">
-                                                <option value="{{$products->gender}}" selected>{{$products->gender}}</option>
-                                                <option value="man"><ya-tr-span data-index="98-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="option 1" data-translation="вариант 1" data-type="trSpan">Мужчины</ya-tr-span></option>
-                                                <option value="woman"><ya-tr-span data-index="99-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="option 2" data-translation="вариант 2" data-type="trSpan">Женщины</ya-tr-span></option>
-                                                <option value="children"><ya-tr-span data-index="100-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="option 3" data-translation="вариант 3" data-type="trSpan">Дети</ya-tr-span></option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group d-none col-sm-2">
-                                        <label for="exampleInputEmail1"><ya-tr-span data-index="106-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Email address" data-translation="Эл. адрес" data-type="trSpan">Введите артикул товара</ya-tr-span></label>
-                                        <input type="input-group-text" class="form-control"  placeholder="Введите артикул товара" name="partner_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
-                                    </div>
-                                </div>
+                            <div class="row" >
+                                {{--                                        <div class="form-group col-sm-6">--}}
+                                {{--                                            <label for="exampleInputEmail1"><ya-tr-span data-index="106-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Email address" data-translation="Эл. адрес" data-type="trSpan">Введите артикул товара</ya-tr-span></label>--}}
+                                {{--                                            <input type="input-group-text" class="form-control"  placeholder="Введите артикул товара" name="article" value="{{old('article')}}">--}}
+                                {{--                                        </div>--}}
+                                {{--                                        <div class="col-sm-2">--}}
+                                {{--                                            <!-- select -->--}}
+                                {{--                                            <div class="form-group col-sm">--}}
+                                {{--                                                <label><ya-tr-span data-index="276-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Select" data-translation="Выберите" data-type="trSpan">Выберите пол:</ya-tr-span></label>--}}
+                                {{--                                                <select class="form-control" id="gender" name="gender">--}}
+                                {{--                                                    <option value="" selected>Тип:</option>--}}
+                                {{--                                                    <option value="man"><ya-tr-span data-index="98-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="option 1" data-translation="вариант 1" data-type="trSpan">Мужчины</ya-tr-span></option>--}}
+                                {{--                                                    <option value="woman"><ya-tr-span data-index="99-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="option 2" data-translation="вариант 2" data-type="trSpan">Женщины</ya-tr-span></option>--}}
+                                {{--                                                    <option value="children"><ya-tr-span data-index="100-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="option 3" data-translation="вариант 3" data-type="trSpan">Дети</ya-tr-span></option>--}}
+                                {{--                                                </select>--}}
+                                {{--                                            </div>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    <div class="form-group d-none col-sm-2">--}}
+                                {{--                                        <label for="exampleInputEmail1"><ya-tr-span data-index="106-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Email address" data-translation="Эл. адрес" data-type="trSpan">Введите артикул товара</ya-tr-span></label>--}}
+                                {{--                                        <input type="input-group-text" class="form-control"  placeholder="Введите артикул товара" name="partner_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">--}}
+                                {{--                                    </div>--}}
+                            </div>
+
+
+                            <!-- select -->
 
                             <div id="selects">
                                 <div class="form-group" id="man">
-                                    <label>Выберите тип:</label>
-                                    <select class="form-control"  name="ManType_id">
-                                        <option value=" " selected>null</option>
-                                        <option value="{{$products->ManType_id}}" selected>{{$products->ManTypes['Translate']}}</option>
-                                        @foreach($mans as $man)
-                                            <option value="{{$man->id}}">{{$man->Translate}}</option>
+                                    <label><ya-tr-span data-index="98-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="option 1" data-translation="вариант 1" data-type="trSpan">Выберите категорию:</label>
+                                    <select class="form-control"  name="subcategory_id">
+                                        <option value=""selected>Выберите категорию:</option>
+                                        @foreach($categories as $category)
+
+                                            <option value="{{$category->id}}">{{$category->title}}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group"  id="woman">
-                                    <label><ya-tr-span data-index="276-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Select" data-translation="Выберите" data-type="trSpan">Выберите тип:</ya-tr-span></label>
-                                    <select class="form-control" name="WomanType_id">
-                                        <option value=" " selected>null</option>
-                                        <option value="{{$products->WomanType_id}}" selected>{{$products->types['Translate']}}</option>
-                                        @foreach($womans as $woman)
-                                            <option value="{{$woman->id}}">{{$woman->Translate}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group" id="children" >
-                                    <label><ya-tr-span  data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Select" data-translation="Выберите" data-type="trSpan">Выберите тип:</ya-tr-span></label>
-                                    <select class="form-control"  name="ChildType_id">
-                                        <option value=" " selected>null</option>
-                                        <option value="{{$products->ChildType_id}}" selected>{{$products->ChildTypes['Translate']}}</option>
-                                        @foreach($childs as $child)
-                                            <option value="{{$child->id}}">{{$child->Translate}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><ya-tr-span data-index="107-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Email address" data-translation="Эл. адрес" data-type="trSpan">Бренд товара</ya-tr-span></label>
-                                <input type="input-group-text" class="form-control" name="brand" value="{{$products->brand}}" placeholder="Введите бренд товара">
+                                <input type="input-group-text" value="{{$product->brand}}" class="form-control" name="brand" placeholder="Введите бренд товара" >
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1"><ya-tr-span data-index="108-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Password" data-translation="Пароль" data-type="trSpan">Название товара</ya-tr-span></label>
-                                <input type="input-group-text" class="form-control" name="title" value="{{$products->title}}" placeholder="Введите название товра (например: ''Рубашка Zarina'')">
+                                <input type="input-group-text" value="{{$product->title}}" class="form-control" name="title" placeholder="Введите название товра (например: ''Рубашка Zarina'')">
                             </div>
 
                             <div class="container">
                                 <div class="row" >
                                     <div class="form-group col-sm">
                                         <label for="exampleInputPassword1"><ya-tr-span data-index="109-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Password" data-translation="Пароль" data-type="trSpan">Актуальная стоимость товара</ya-tr-span></label>
-                                           <div class="input-group">
-                                               <input type="input-group-text" class="form-control" name="price" value="{{$products->price}}" placeholder="Введите актуальную стоимость товара">
-                                               <div class="input-group-append">
-                                                   <span class="input-group-text">₽</span>
-                                               </div>
-                                           </div>
+                                        <div class="input-group">
+                                            <input type="input-group-text" value="{{$product->price}}" class="form-control" name="price" placeholder="Введите актуальную стоимость товара">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">₽</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group col-sm">
                                         <label for="exampleInputPassword1"><ya-tr-span data-index="110-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Password" data-translation="Пароль" data-type="trSpan">Цена если на товар действует скидка</ya-tr-span></label>
                                         <div class="input-group">
-                                            <input type="input-group-text" class="form-control" name="old_price" value="{{$products->old_price}}" placeholder="Введите неактуальную стоймость товара, (будет отображаться как скидка)">
+                                            <input type="input-group-text" value="{{$product->old_price}}" class="form-control" name="old_price" placeholder="Введите неактуальную стоймость товара, (будет отображаться как скидка)">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">₽</span>
                                             </div>
@@ -130,27 +114,27 @@
 
                             <div class="form-group">
                                 <label><ya-tr-span data-index="134-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Textarea" data-translation="Textarea" data-type="trSpan">Короткое описание товара</ya-tr-span></label>
-                                <textarea class="form-control" rows="3" name="description"placeholder="Введите короткое описание товара (максимально 150 символов)" style="margin-top: 0px; margin-bottom: 0px; height: 60px;">{{$products->description}}</textarea>
+                                <textarea class="form-control"  rows="3" name="short_description" placeholder="Введите короткое описание товара (максимально 150 символов)" style="margin-top: 0px; margin-bottom: 0px; height: 60px;">{{$product->short_description}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label><ya-tr-span data-index="134-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Textarea" data-translation="Textarea" data-type="trSpan">Полное описание товара</ya-tr-span></label>
-                                <textarea class="form-control" rows="3" name="full_description" placeholder="Полное описание товара" style="margin-top: 0px; margin-bottom: 0px; height: 94px;">{{$products->full_description}}</textarea>
+                                <textarea class="form-control" rows="3" name="description" placeholder="Полное описание товара" style="margin-top: 0px; margin-bottom: 0px; height: 94px;">{{$product->description}}</textarea>
                             </div>
 
                             <div class="container">
                                 <label for="exampleInputPassword1"><ya-tr-span data-index="108-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Password" data-translation="Пароль" data-type="trSpan">Количество размеров:</ya-tr-span></label>
                                 <div class="row" >
                                     <div class="form-group col-sm">
-                                        <input type="input-group-text" class="form-control" name="s" value="{{$products->s}}" placeholder="S">
+                                        <input type="input-group-text" class="form-control" name="s" placeholder="S" value="{{$product->s}}">
                                     </div>
                                     <div class="form-group col-sm">
-                                        <input type="input-group-text" class="form-control" name="m" value="{{$products->m}}"  placeholder="M">
+                                        <input type="input-group-text" class="form-control" name="m" placeholder="M" value="{{$product->m}}">
                                     </div>
                                     <div class="form-group col-sm">
-                                        <input type="input-group-text" class="form-control" name="x" value="{{$products->x}}" placeholder="X">
+                                        <input type="input-group-text" class="form-control" name="x" placeholder="X" value="{{$product->x}}">
                                     </div>
                                     <div class="form-group col-sm">
-                                        <input type="input-group-text" class="form-control" name="xl" value="{{$products->xl}}" placeholder="XL">
+                                        <input type="input-group-text" class="form-control" name="xl" placeholder="XL" value="{{$product->xl}}">
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +144,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="img1">
+                                    <input type="file" class="custom-file-input" name="preview_image">
                                     <label class="custom-file-label" for="exampleInputFile"><ya-tr-span data-index="309-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Choose file" data-translation="Выберите файл" data-type="trSpan">Выберите изображение</ya-tr-span></label>
                                 </div>
                                 <div class="input-group-append">
@@ -169,7 +153,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="img2">
+                                    <input type="file" class="custom-file-input" name="second_image">
                                     <label class="custom-file-label" for="exampleInputFile"><ya-tr-span data-index="309-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Choose file" data-translation="Выберите файл" data-type="trSpan">Выберите изображение</ya-tr-span></label>
                                 </div>
                                 <div class="input-group-append">
@@ -178,7 +162,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="img3">
+                                    <input type="file" class="custom-file-input" name="third_image">
                                     <label class="custom-file-label" for="exampleInputFile"><ya-tr-span data-index="309-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Choose file" data-translation="Выберите файл" data-type="trSpan">Выберите изображение</ya-tr-span></label>
                                 </div>
                                 <div class="input-group-append">
