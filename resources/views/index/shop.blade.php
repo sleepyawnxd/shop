@@ -178,9 +178,9 @@
                                     <div class="single-product-wrapper">
                                         <!-- Product Image -->
                                         <div class="product-img">
-                                            <img src="img/product-img/product-1.jpg" alt="">
+                                            <img src="{{asset('img/product-img/product-1.jpg')}}" alt="">
                                             <!-- Hover Thumb -->
-                                            <img class="hover-img" src="img/product-img/product-2.jpg" alt="">
+                                            <img class="hover-img" src="{{asset('img/product-img/product-2.jpg')}}" alt="">
 
                                             <!-- Product Badge -->
                                             <div class="product-badge offer-badge">
@@ -204,7 +204,7 @@
                                             <div class="hover-content">
                                                 <!-- Add to Cart -->
                                                 <div class="add-to-cart-btn">
-                                                    <a href="#" class="btn essence-btn">Add to Cart</a>
+                                                    <a href="{{route('addCart',['id' => $product->id])}}" class="btn essence-btn">Добавить</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 // xyz
 
+Route::group(['namespace' => 'App\Http\Controllers\Cart', 'prefix' => 'cart'], function(){
+    Route::get('/','CartController@addCart')->name('addCart');
+    Route::get('/remove','CartController@removeCart')->name('removeCart');
+});
+
 Route::group(['namespace' => 'App\Http\Controllers\Main','prefix' =>'shop'],function (){
     route::get('/','IndexController')->name('shop.index');
 
