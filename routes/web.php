@@ -34,7 +34,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Catalog','prefix' =>'catalog'
 });
 Route::group(['namespace' => 'App\Http\Controllers\Checkout','prefix' => 'checkout'],function (){
     route::get('/','IndexController')->name('checkout.index');
-    route::get('/save-order','StoreController')->name('save_order');
+    route::post('/','StoreController')->name('save_order');
 });
 
 

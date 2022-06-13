@@ -27,7 +27,7 @@ class CartController extends Controller
             'price' => $product->price,
             'quantity' => $request->gty ?? 1,
             'attributes' =>
-                ['image' => $product->img1],
+                ['preview_image' => $product->preview_image],
         ]);
 
 
