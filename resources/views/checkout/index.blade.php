@@ -25,30 +25,29 @@
                         <form action="#" method="post">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="first_name">First Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="first_name" value="" required="">
+                                    <label for="first_name">Имя <span>*</span></label>
+                                    <input type="text" class="form-control" id="first_name" value="" required="" name="first_name">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="last_name">Last Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="last_name" value="" required="">
+                                    <label for="last_name">Фамилия <span>*</span></label>
+                                    <input type="text" class="form-control" id="last_name" value="" required="" name="last_name">
                                 </div>
 
                                 <div class="col-12 mb-3">
                                     <label for="country">Страна <span>*</span></label>
-                                    <select class="w-100" id="country" style="display: none;">
+                                    <select class="w-100" id="country" style="display: none;" name="country">
                                         <option value="ru">Россия</option>
                                     </select>
                                     <div class="nice-select w-100" tabindex="0">
                                         <span class="current">Выберете страну</span>
                                         <ul class="list">
                                             <li data-value="ru" class="option selected">Россия</li>
-
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="street_address">Адресс <span>*</span></label>
-                                    <input type="text" class="form-control mb-3" id="street_address" value="">
+                                    <input type="text" class="form-control mb-3" id="street_address" value="" name="address">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="postcode">ZIP <span>*</span></label>
@@ -122,7 +121,7 @@
 
                         </div>
 
-                        <a href="#" class="btn essence-btn">Оставить заказ</a>
+                        <a href="{{route('save_order')}}" class="btn essence-btn">Оставить заказ</a>
                     </div>
                 </div>
             </div>
