@@ -111,7 +111,8 @@
             </div>
             <!-- Cart Area -->
             <div class="cart-area">
-                <a href="#" id="essenceCartBtn"><img src="{{asset('img/core-img/bag.svg')}}" alt=""> <span>{{\Cart::getTotalQuantity(\Cart::session(\Illuminate\Support\Facades\Session::getId())->getTotalQuantity())}}</span></a>
+                <a href="#" id="essenceCartBtn"><img src="{{asset('img/core-img/bag.svg')}}" alt="">
+                    <span>{{\Cart::getTotalQuantity(\Cart::session(\Illuminate\Support\Facades\Session::getId())->getTotalQuantity())}}</span></a>
             </div>
         </div>
 
@@ -126,7 +127,8 @@
 
     <!-- Cart Button -->
     <div class="cart-button">
-        <a href="#" id="rightSideCart"><img src="{{asset('img/core-img/bag.svg')}}" alt=""> <span>{{\Cart::getTotalQuantity(\Cart::session( $sessionId = \Illuminate\Support\Facades\Session::getId())->getTotalQuantity())}}</span></a>
+        <a href="#" id="rightSideCart"><img src="{{asset('img/core-img/bag.svg')}}" alt="">
+            <span>{{\Cart::getTotalQuantity(\Cart::session( $sessionId = \Illuminate\Support\Facades\Session::getId())->getTotalQuantity())}}</span></a>
     </div>
 
     <div class="cart-content d-flex">
@@ -135,29 +137,29 @@
         <div class="cart-list">
             <!-- Single Cart Item -->
 
-        @if(\Cart::session($sessionId)->isEmpty() == false)
+            @if(\Cart::session($sessionId)->isEmpty() == false)
 
 
-            @foreach($cart = \Cart::session($sessionId)->getContent() as $item)
-                <div class="single-cart-item">
-                    <a href="{{route('removeCart',['id' => $item->id])}}" class="product-image">
-                        <img src="{{asset('img/product-img/product-1.jpg')}}" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
+                @foreach($cart = \Cart::session($sessionId)->getContent() as $item)
+                    <div class="single-cart-item">
+                        <a href="{{route('removeCart',['id' => $item->id])}}" class="product-image">
+                            <img src="{{asset('img/product-img/product-1.jpg')}}" class="cart-thumb" alt="">
+                            <!-- Cart Item Desc -->
+                            <div class="cart-item-desc">
                             <span class="product-remove">
                                 <i class="fa fa-close" aria-hidden="true"></i>
                             </span>
-                            <span class="badge">-</span>
-                            <h6>{{$item->name}}</h6>
-                            <p class="size">Size: S</p>
-                            <p class="color">Color: Red</p>
-                            <p class="price">{{$item->price}} ₽</p>
-                        </div>
-                    </a>
-                </div>
+                                <span class="badge">-</span>
+                                <h6>{{$item->name}}</h6>
+                                <p class="size">Size: S</p>
+                                <p class="color">Color: Red</p>
+                                <p class="price">{{$item->price}} ₽</p>
+                            </div>
+                        </a>
+                    </div>
                 @endforeach
             @else
-            Ваша корзину пуста
+                Ваша корзину пуста
             @endif
 
         </div>
@@ -173,7 +175,7 @@
                 <li><span>total:</span> <span>$232.00</span></li>
             </ul>
             <div class="checkout-btn mt-100">
-                <a href="checkout.html" class="btn essence-btn">Оформить</a>
+                <a href="{{route('checkout.index')}}" class="btn essence-btn">Оформить</a>
             </div>
         </div>
     </div>
@@ -230,7 +232,8 @@
                     <div class="subscribtion_form">
                         <form action="#" method="post">
                             <input type="email" name="mail" class="mail" placeholder="Your email here">
-                            <button type="submit" class="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                            <button type="submit" class="submit"><i class="fa fa-long-arrow-right"
+                                                                    aria-hidden="true"></i></button>
                         </form>
                     </div>
                 </div>
@@ -239,11 +242,16 @@
             <div class="col-12 col-md-6">
                 <div class="single_widget_area">
                     <div class="footer_social_area">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i
+                                class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i
+                                class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"
+                                                                                                  aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
+                                class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i
+                                class="fa fa-youtube-play" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -253,7 +261,10 @@
             <div class="col-md-12 text-center">
                 <p>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>, distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                        href="https://colorlib.com" target="_blank">Colorlib</a>, distributed by <a
+                        href="https://themewagon.com/" target="_blank">ThemeWagon</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>

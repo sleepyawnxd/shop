@@ -32,7 +32,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Catalog','prefix' =>'catalog'
     route::get('/{category}','IndexController')->name('catalog.index');
     route::get('/view/{product}','ViewController')->name('product.view');
 });
-
+Route::group(['namespace' => 'App\Http\Controllers\Checkout','prefix' => 'checkout'],function (){
+    route::get('/','IndexController')->name('checkout.index');
+});
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin','prefix' =>'admin'],function (){
