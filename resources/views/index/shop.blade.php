@@ -195,7 +195,7 @@
                                         <!-- Product Description -->
                                         <div class="product-description">
                                             <span>подкатегория</span>
-                                            <a href="single-product-details.html">
+                                            <a href="{{route('product.view',$product->id)}}">
                                                 <h6>{{$product->title}}</h6>
                                             </a>
                                             <p class="product-price"><span class="old-price">{{$product->old_price}} Р</span> {{$product->price}} Р</p>

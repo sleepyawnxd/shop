@@ -14,7 +14,7 @@ class ViewController extends Controller
     public function __invoke()
     {
         $id = 1;
-        $products = Product::where('id', '=',$id)->firstOrFail();
-        dd($products);
+        $product = Product::where('id', '=',$id)->firstOrFail();
+        return view ('shop.view',compact('product'));
     }
 }

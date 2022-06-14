@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{asset('css/core-style.css')}}">
     <link rel="stylesheet" href="{{asset('style.css')}}">
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 
 </head>
 
@@ -169,12 +169,11 @@
 <!-- ##### Right Side Cart End ##### -->
 
 <div class="container pt-5"></div>
-
+@yield('product_content')
 <div class="container pt-5">
     <div class="col-12-lg pt-5 pb-lg-5">
         @yield('content')
     </div>
-
 </div>
 
 <div class="container pb-5"></div>
@@ -267,6 +266,7 @@
     </div>
 </footer>
 <!-- ##### Footer Area End ##### -->
+<!-- JavaScript Bundle with Popper -->
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
 <script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
