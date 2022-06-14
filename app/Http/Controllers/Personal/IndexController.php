@@ -14,6 +14,7 @@ class IndexController extends Controller
         $user_id = Auth::user()->id;
         $order = Order::where('user_id',$user_id)->get();
 
+
         return view('personal.index',compact('order'));
 
     }

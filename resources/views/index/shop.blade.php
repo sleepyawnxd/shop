@@ -178,9 +178,9 @@
                                     <div class="single-product-wrapper">
                                         <!-- Product Image -->
                                         <div class="product-img">
-                                            <img src="{{asset('img/product-img/product-1.jpg')}}" alt="">
+                                            <img src="{{asset('storage/' . $product->preview_image)}}" alt="">
                                             <!-- Hover Thumb -->
-                                            <img class="hover-img" src="{{asset('img/product-img/product-2.jpg')}}" alt="">
+                                            <img class="hover-img" src="{{asset('storage/' . $product->second_image)}}" alt="">
 
                                             <!-- Product Badge -->
                                             <div class="product-badge offer-badge">

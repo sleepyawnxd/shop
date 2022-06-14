@@ -23,6 +23,7 @@ class StoreController extends Controller
         $cart = \Cart::session($sessionId)->getContent();
 
         $order['user_id'] = Auth::user()->id;
+        $order['amount'] = \Cart::session($sessionId)->getTotal();
         $save_order = Order::create($order);
 
 

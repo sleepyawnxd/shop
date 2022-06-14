@@ -30,7 +30,7 @@
                         <th scope="row" style="width: 20%">
                             <div class="product-wrapper mb-50">
                                 <div class="product-img mb-25">
-                                    <a href="#">
+                                    <a href="{{route('product.view',$item->id)}}">
                                         <img src="{{asset('storage/'. $item->preview_image)}}" alt="" style="border-radius: 10px">
                                         {{--                                        <img class="secondary-img" src="{{asset('storage/'. $item->second_image)}}" alt="">--}}
                                     </a>
