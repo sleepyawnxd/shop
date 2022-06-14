@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Essence - Fashion Ecommerce Template</title>
+    <title>Essence</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
@@ -41,7 +41,7 @@
                 <!-- Nav Start -->
                 <div class="classynav">
                     <ul>
-                        <li><a href="#">Shop</a>
+                        <li><a href="#">Каталог</a>
                             <div class="megamenu">
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Women's Collection</li>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="#">Pages</a>
+                        <li><a href="#">Страницы</a>
                             <ul class="dropdown">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="shop.html">Shop</a></li>
@@ -84,8 +84,8 @@
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
                     </ul>
                 </div>
                 <!-- Nav End -->
@@ -167,12 +167,11 @@
         <!-- Cart Summary -->
         <div class="cart-amount-summary">
 
-            <h2>Summary</h2>
+            <h2>Корзина</h2>
             <ul class="summary-table">
-                <li><span>subtotal:</span> <span>$274.00</span></li>
-                <li><span>delivery:</span> <span>Free</span></li>
-                <li><span>discount:</span> <span>-15%</span></li>
-                <li><span>total:</span> <span>$232.00</span></li>
+                <li><span>Полная стоимость:</span> <span>₽</span></li>
+                <li><span>Скидка:</span> <span>-15%</span></li>
+                <li><span>Итого:</span> <span>₽</span></li>
             </ul>
             <div class="checkout-btn mt-100">
                 <a href="{{route('checkout.index')}}" class="btn essence-btn">Оформить</a>
@@ -200,9 +199,9 @@
                     <!-- Footer Menu -->
                     <div class="footer_menu">
                         <ul>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="shop.html">Магазин</a></li>
+                            <li><a href="blog.html">Блог</a></li>
+                            <li><a href="contact.html">Контакты</a></li>
                         </ul>
                     </div>
                 </div>
@@ -211,12 +210,12 @@
             <div class="col-12 col-md-6">
                 <div class="single_widget_area mb-30">
                     <ul class="footer_widget_menu">
-                        <li><a href="#">Order Status</a></li>
-                        <li><a href="#">Payment Options</a></li>
-                        <li><a href="#">Shipping and Delivery</a></li>
-                        <li><a href="#">Guides</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Статус заказа</a></li>
+                        <li><a href="#">Варианты оплаты</a></li>
+                        <li><a href="#">Доставка и доставка</a></li>
+                        <li><a href="#">Направляющие</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Условия использования</a></li>
                     </ul>
                 </div>
             </div>
@@ -227,7 +226,7 @@
             <div class="col-12 col-md-6">
                 <div class="single_widget_area">
                     <div class="footer_heading mb-30">
-                        <h6>Subscribe</h6>
+                        <h6>Подписаться</h6>
                     </div>
                     <div class="subscribtion_form">
                         <form action="#" method="post">
