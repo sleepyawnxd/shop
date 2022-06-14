@@ -37,6 +37,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Checkout','prefix' => 'checko
     route::post('/','StoreController')->name('save_order');
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Personal','prefix' => 'personal'],function () {
+    route::get('/', 'IndexController')->name('personal.index');
+    route::get('/view/{id}', 'ViewController')->name('personal.orders.view');
+});
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin','prefix' =>'admin'],function (){
 //    route::get('/','IndexController')->name('admin.index');

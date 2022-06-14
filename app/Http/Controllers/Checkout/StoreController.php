@@ -41,6 +41,6 @@ class StoreController extends Controller
             OrderItem::create($orderItem);
         }
 
-        dd('Заказ добавлен');
+        return redirect(route('personal.index'));
     }
 }
